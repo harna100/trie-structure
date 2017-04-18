@@ -25,7 +25,7 @@ ASSIGNMENT= $(notdir $(shell cd .. && pwd))
 INCLUDES= -I ../include
 
 all: $(SOURCES) $(EXECUTABLE)
-	./$(EXECUTABLE)
+	./$(EXECUTABLE) words.txt
 
 allS: $(SOURCES) $(EXECUTABLE)
 

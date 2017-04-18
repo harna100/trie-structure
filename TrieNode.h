@@ -10,6 +10,7 @@ class TrieNode
 		TrieNode(char charToSet, bool _isEnd);
 		~TrieNode();
 		TrieNode* getNextNode(char charToSearch);
+		bool hasNode(char charToSearch);
 		char character;
 		bool isEnd;
 		std::map<char, TrieNode*> next;
