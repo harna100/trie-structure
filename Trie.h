@@ -8,12 +8,13 @@ class Trie
 	public:
 		Trie();
 		~Trie();
-		void insert(std::string word, int index, TrieNode nextNode);
+		void insertWord(std::string word);
 		bool exists(std::string word);
-		std::list<std::string> prefixSearch(std::string prefix, int index, std::list<std::string> currWords);
+		std::list<std::string> prefixSearch(std::string prefix, int index, std::list<std::string> currWords, std::string currWord);
+		TrieNode root;
 
 	private:
-		TrieNode root;
+		void insert(std::string word, int index, TrieNode nextNode);
 	protected:
 	
 	

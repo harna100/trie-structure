@@ -6,21 +6,22 @@
 Trie importWords(std::string fileName);
 
 int main(int argc, char **argv){
-	
-	std::map<char, TrieNode> myMap2;
-	myMap2['a'] = TrieNode();
-	
-	char c;
-	std::cin >> c;
-	std::map<char, TrieNode>::iterator it = myMap2.find(c);
-	if(it == myMap2.end()){
-		std::cout << "Not found\n";
-	}
-	else{
-		std::cout << "\'" << it->second.character << "\'"  << std::endl;
-	}
+	Trie trie = Trie();
+	trie.insertWord("Hello");
+	std::cout << '\n';
+	trie.insertWord("Hell");
+	std::cout << '\n';
+	trie.insertWord("blah");
+	std::cout << '\n';
+	trie.insertWord("bla");
 
-
+	std::cout << '\n';
+	for(std::map<char, TrieNode>::const_iterator it = trie.root.next.begin(); it != trie.root.next.end(); ++it){
+		std::cout << it->second.character << "\n";
+		for(std::map<char, TrieNode>::const_iterator it2 = it->second.next.begin(); it2 != it->second.next.end(); ++it2){
+			std::cout << it2->second.character << "\n";
+		}
+	}
 	return 0;
 }
 
