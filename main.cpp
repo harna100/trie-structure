@@ -15,13 +15,8 @@ int main(int argc, char **argv){
 	std::cout << '\n';
 	trie.insertWord("bla");
 
-	std::cout << '\n';
-	for(std::map<char, TrieNode>::const_iterator it = trie.root.next.begin(); it != trie.root.next.end(); ++it){
-		std::cout << it->second.character << "\n";
-		for(std::map<char, TrieNode>::const_iterator it2 = it->second.next.begin(); it2 != it->second.next.end(); ++it2){
-			std::cout << it2->second.character << "\n";
-		}
-	}
+	char c;
+	std::cin >> c;
 	return 0;
 }
 
