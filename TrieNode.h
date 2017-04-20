@@ -16,8 +16,6 @@ class TrieNode
 		std::map<char, TrieNode*> next;
 	private:
 	protected:
-	
-	
 };
 
 #endif

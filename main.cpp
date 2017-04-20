@@ -8,27 +8,10 @@
 Trie importWords(std::string fileName);
 
 int main(int argc, char **argv){
-/*	Trie trie = Trie();
-	trie.insertWord("Hello");
-	std::cout << '\n';
-	trie.insertWord("Hell");
-	std::cout << '\n';
-	trie.insertWord("blah");
-	std::cout << '\n';
-	trie.insertWord("bla");
-	std::cout << '\n';
-
-	std::list<std::string>* returned = trie.prefixSearch("Hel");
-	for (std::list<std::string>::iterator i = returned->begin(); i != returned->end(); ++i){	
-    	std::cout << *i << '\n';
+	if(argc != 2){
+		std::cout << "Enter only 1 argument (filename containing words separated by lines)\n";
+		return 1;
 	}
-
-	std::cout << "\n\n";
-	returned = trie.prefixSearch("bl");
-	for (std::list<std::string>::iterator i = returned->begin(); i != returned->end(); ++i){	
-    	std::cout << *i << '\n';
-	}
-*/
 	Trie trie = importWords(argv[1]);
 
 	std::string userRaw;
@@ -55,15 +38,8 @@ Trie importWords(std::string fileName){
 	Trie toReturn = Trie();
 	std::ifstream infile(fileName);
 	std::string line;
-	int count = 0;
 	while(std::getline(infile, line)){
-		// std::cout << "inserting: " << line << '\n';
 		toReturn.insertWord(line);
-		std::cout << '\n';
-		if(count == 21){
-			break;
-		}
-		++count;
 	}
 
 	return toReturn;

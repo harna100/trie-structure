@@ -28,10 +28,8 @@ TrieNode* TrieNode::getNextNode(char charToSearch){
 	if(it == next.end()){
 		toReturn = new TrieNode(charToSearch);
 		next.insert(std::map<char, TrieNode*>::value_type(charToSearch, toReturn));
-		std::cout << charToSearch << " inserted\n";
 	}
 	else{
-		std::cout << charToSearch << " found!\n";
 		toReturn = it->second;
 	}
 
